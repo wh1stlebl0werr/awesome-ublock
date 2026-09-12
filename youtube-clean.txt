@@ -1,0 +1,335 @@
+! Title: YouTube Clean
+! Description: Removes Shorts, recommendations, member-only videos, sidebar clutter, and UI bloat from YouTube
+! Homepage: https://github.com/wh1stlebl0werr/ublock-filters-collection
+! License: Public Domain
+! Version: 1.1.0
+! Last modified: 2025-09-12
+! Expires: 7 days
+
+! ============================================================
+! SEARCH PAGE CLUTTER
+! ============================================================
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+youtube.com##ytd-shelf-renderer:has(span:has-text(/Related to your search/i))
+youtube.com##ytd-shelf-renderer:has-text(/People also watched/)
+youtube.com###contents > ytd-shelf-renderer:has-text(/For you/)
+youtube.com##ytd-shelf-renderer:has(span:has-text(/Watch again/i))
+youtube.com##ytd-horizontal-card-list-renderer:has(span:has-text(/Searches related to/i))
+youtube.com##ytd-shelf-renderer:has(span:has-text(/Learn while/i))
+youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope
+youtube.com###secondary > .ytd-two-column-search-results-renderer
+youtube.com###contents > .ytd-secondary-search-container-renderer.style-scope
+youtube.com##ytd-shelf-renderer:has-text(/Previously watched/)
+youtube.com##ytd-shelf-renderer:has-text(/Channels new to you/)
+youtube.com##ytd-shelf-renderer:has-text(/From related searches/)
+
+! ============================================================
+! MEMBER-ONLY VIDEOS
+! ============================================================
+www.youtube.com##ytd-rich-item-renderer:has(div.badge-style-type-members-only)
+www.youtube.com##ytd-rich-item-renderer:has(.yt-badge-shape--membership)
+
+! ============================================================
+! SIDEBAR NAVIGATION
+! ============================================================
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Shorts"]
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Home"]
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Accueil"]
+www.youtube.com##ytd-guide-signin-promo-renderer
+www.youtube.com##.ytd-guide-entry-renderer[href="/feed/clips"]
+www.youtube.com##a.ytd-guide-entry-renderer[href="/premium"]
+www.youtube.com##ytd-guide-section-renderer:has(#guide-section-title:has-text(Explore))
+www.youtube.com##ytd-guide-entry-renderer:has(#endpoint[href="/feed/explore"])
+www.youtube.com##ytd-mini-guide-entry-renderer:has(#endpoint[href="/feed/explore"])
+www.youtube.com##ytd-guide-entry-renderer:has(#endpoint[href="/feed/guide_builder"])
+www.youtube.com##ytd-guide-section-renderer:has(#guide-section-title:has-text(More from YouTube))
+www.youtube.com##ytd-guide-renderer #footer
+
+! ============================================================
+! SHORTS IN SEARCH
+! ============================================================
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+
+! ============================================================
+! AD DETECTION BYPASS
+! ============================================================
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
+youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
+youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
+
+! ============================================================
+! FOOTER / GUIDE LINKS
+! ============================================================
+www.youtube.com###copyright
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+
+! ============================================================
+! GENERIC SHELVES
+! ============================================================
+www.youtube.com##ytd-rich-shelf-renderer[has-rounded-box-art-thumbnail-style]
+www.youtube.com##ytd-rich-shelf-renderer:has(a[href="/playables"])
+
+! ============================================================
+! HEADER
+! ============================================================
+www.youtube.com##ytd-topbar-logo-renderer>#country-code
+||www.gstatic.com/youtube/img/promos/*$image
+www.youtube.com##.ytd-yoodle-renderer
+www.youtube.com###voice-search-button
+||www.youtube.com/s/search/audio/*.mp3$media
+www.youtube.com##ytd-topbar-menu-button-renderer:has(button[aria-label=Create])
+www.youtube.com##ytd-button-renderer:has(button[aria-label=Create])
+
+! ============================================================
+! POPUPS & SURVEYS
+! ============================================================
+youtube.com###survey
+www.youtube.com##ytd-inline-survey-renderer
+www.youtube.com##.ytd-inline-survey-renderer
+youtube.com##yt-survey-answer-card-renderer
+www.youtube.com##.ytd-checkbox-survey-renderer
+www.youtube.com##ytd-feedback-survey-renderer
+www.youtube.com##.ytd-feedback-survey-renderer
+www.youtube.com##.ytd-survey-follow-up-renderer
+www.youtube.com##ytd-survey-follow-up-renderer
+www.youtube.com##.ytd-multi-stage-survey-renderer
+www.youtube.com##ytd-multi-stage-survey-renderer
+www.youtube.com##ytd-rating-survey-renderer
+www.youtube.com##.ytd-rating-survey-renderer
+www.youtube.com##.ytd-red-cancel-survey-renderer
+www.youtube.com##ytd-red-cancel-survey-renderer
+www.youtube.com##ytd-single-option-survey-renderer
+www.youtube.com##.ytd-single-option-survey-renderer
+youtube.com###attached-survey
+www.youtube.com##tp-yt-paper-toast#toast
+www.youtube.com##.ytp-promotooltip-wrapper
+www.youtube.com##tp-yt-iron-overlay-backdrop.opened
+
+! ============================================================
+! PAYMENT & MEMBERSHIP NAGS
+! ============================================================
+www.youtube.com##ytd-popup-container:has(>tp-yt-paper-dialog>ytd-offline-promo-renderer)
+www.youtube.com##ytd-popup-container > tp-yt-paper-dialog:has(upsell-view-model)
+www.youtube.com##tp-yt-paper-dialog:has(yt-mealbar-promo-renderer)
+www.youtube.com##yt-bubble-hint-renderer > .yt-bubble-hint-renderer:has(.yt-formatted-string:has-text(Membership))
+
+! ============================================================
+! HOMEPAGE SHELVES
+! ============================================================
+www.youtube.com##ytd-rich-shelf-renderer:has(a[href="/channel/UClgRkhTL3_hImCAmdLfDE4g"])
+www.youtube.com##ytd-rich-item-renderer:has(.badge-style-type-ypc> span:has-text(Free with Ads))
+! www.youtube.com##ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
+www.youtube.com##ytd-rich-shelf-renderer:has(#title:has-text(Breaking news))
+m.youtube.com##ytm-rich-section-renderer:has(.rich-shelf-title:has-text(Breaking news))
+www.youtube.com##ytd-rich-shelf-renderer:has(ytd-badge-supported-renderer#featured-badge)
+www.youtube.com##ytd-statement-banner-renderer
+www.youtube.com##ytd-brand-video-singleton-renderer
+www.youtube.com##ytd-brand-video-shelf-renderer
+www.youtube.com##.ytd-brand-video-shelf-renderer
+www.youtube.com##ytd-feed-nudge-renderer
+www.youtube.com##ytd-rich-item-renderer.style-scope:has(> #content > ytd-feed-nudge-renderer)
+www.youtube.com##.ytd-rich-item-renderer:has(>.ytd-feed-nudge-renderer)
+www.youtube.com##ytd-feed-filter-chip-bar-renderer:has(yt-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
+m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
+www.youtube.com###frosted-glass.with-chipbar.ytd-app:style(height:56px !important)
+www.youtube.com##ytd-rich-shelf-renderer:has(ytd-rich-item-renderer[is-post])
+www.youtube.com##ytd-item-section-renderer:has(a[href$="/posts"])
+
+! ============================================================
+! VIDEO BROWSING
+! ============================================================
+youtube.com##yt-chip-cloud-renderer
+www.youtube.com##.ytd-compact-radio-renderer
+www.youtube.com##ytd-compact-movie-renderer
+www.youtube.com##ytd-compact-playlist-renderer .ytd-channel-name:has-text(/^YouTube/):upward(ytd-compact-playlist-renderer)
+www.youtube.com##.badge[aria-label="Fundraiser"]
+m.youtube.com##ytm-badge:has-text(Fundraiser)
+www.youtube.com##.badge[aria-label="New"]
+www.youtube.com##.yt-content-metadata-view-model-wiz__badge:has-text(New)
+m.youtube.com##ytm-badge:has-text(New)
+www.youtube.com##.badge[aria-label="4K"]
+m.youtube.com##ytm-badge:has-text(4K)
+m.youtube.com##ytm-badge:has-text(Related)
+www.youtube.com##ytd-menu-service-item-download-renderer
+www.youtube.com##ytd-menu-service-item-renderer:has(>tp-yt-paper-item:has(>yt-formatted-string:has-text(Share)))
+
+! ============================================================
+! VIDEO PAGE — PERFORMANCE
+! ============================================================
+||www.youtube.com/s/desktop/*/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js$script,domain=youtube.com
+||www.youtube.com/s/desktop/*/jsbin/scheduler.vflset/scheduler.js$script,domain=youtube.com
+||www.youtube.com/youtubei/v1/updated_metadata$domain=youtube.com
+
+! ============================================================
+! VIDEO PAGE — PLAYER
+! ============================================================
+www.youtube.com###player>#cinematics.ytd-watch-flexy
+www.youtube.com###player>#cinematics-container
+m.youtube.com##.below-the-player-cinematic-container
+youtube.com##.ytp-doubletap-ui-legacy
+youtube.com##.ytp-cards-button-icon
+youtube.com##.ytp-cards-button
+youtube.com##.ytp-ce-element
+youtube.com##.iv-branding
+youtube.com##.ytp-cultural-moment-overlay
+||www.youtube.com/s/player/*/player_ias.vflset/*/endscreen.js^$script
+youtube.com##.ytp-pause-overlay
+youtube.com##.ytp-videowall-still[data-is-mix=true]
+www.youtube.com##.ytp-cairo-refresh-signature-moments div.ytp-play-progress:style(background: var(--yt-spec-static-brand-red,#f03) !important)
+www.youtube.com##.ytd-thumbnail-overlay-resume-playback-renderer:style(background: var(--yt-spec-static-brand-red,#f03) !important)
+youtube.com##button.ytp-button[data-tooltip-target-id=ytp-autonav-toggle-button]
+youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
+
+! ============================================================
+! VIDEO PAGE — UNDER PLAYER
+! ============================================================
+www.youtube.com##ytd-badge-supported-renderer:has(.badge-style-type-ypc):remove()
+youtube.com##.ytp-suggested-action-badge
+youtube.com###title>#super-title
+youtube.com##.badge.badge-style-type-collection
+youtube.com###info-container>#info>a.yt-simple-endpoint[style-target="bold"]
+youtube.com##a:has(>yt-icon[icon="yt-icons:location_pin"])
+youtube.com##yt-formatted-string>span:has-text(product)
+youtube.com##a[href^="/hashtag/"]
+youtube.com###sponsor-button
+youtube.com##button[aria-label="Join this channel"]
+youtube.com###purchase-button
+www.youtube.com##ytd-channel-name>.ytd-channel-name>tp-yt-paper-tooltip.ytd-channel-name
+m.youtube.com##.ytm-infocards-creator-custom-url-buttons
+
+! ============================================================
+! VIDEO PAGE — ACTION ROW
+! ============================================================
+www.youtube.com##ytd-download-button-renderer
+||www.youtube.com/s/player/*/player_ias.vflset/*/offline.js$script
+www.youtube.com##ytd-button-renderer:has(a:has(> yt-formatted-string:has-text(Clip)))
+www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(> button[aria-label=Clip]))
+youtube.com##yt-button-view-model:has(>button-view-model> button[aria-label=Clip])
+www.youtube.com##ytd-menu-service-item-renderer:has(>tp-yt-paper-item:has(>yt-formatted-string:has-text(Clip)))
+www.youtube.com##ytd-button-renderer:has(>a:has(> yt-formatted-string:has-text(Thanks)))
+www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(> button[aria-label=Thanks]))
+youtube.com##yt-button-view-model:has(>button-view-model> button[aria-label=Thanks])
+www.youtube.com##ytd-menu-service-item-renderer:has(>tp-yt-paper-item:has(>yt-formatted-string:has-text(Thanks)))
+www.youtube.com##ytd-button-renderer:has(>a:has(> yt-formatted-string:has-text(Share)))
+www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(> button[aria-label=Share]))
+www.youtube.com##yt-button-view-model:has(>button-view-model> button[aria-label=Share])
+m.youtube.com##button-view-model:has(button[aria-label="Share"])
+www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(> button:has-text(Save)):has(yt-icon))
+www.youtube.com##tp-yt-paper-item:has(yt-icon):has(yt-formatted-string:has-text(Save))
+www.youtube.com##yt-button-view-model:has(>button-view-model> button[aria-label="Save to playlist"])
+m.youtube.com##button-view-model:has(button[aria-label="Save to playlist"])
+www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(>button.yt-spec-button-shape-next--disabled)):not(.ytd-commentbox)
+
+! ============================================================
+! VIDEO PAGE — DESCRIPTION BOX
+! ============================================================
+www.youtube.com##+js(aeld, yt-text-inline-expander-collapse-clicked)
+youtube.com###info-container #info>a.yt-simple-endpoint[href^="/hashtag/"]
+youtube.com##ytd-merch-shelf-renderer
+youtube.com###ticket-shelf
+youtube.com###clarify-box
+www.youtube.com##.ytd-rich-metadata-row-renderer[component-style=RICH_METADATA_RENDERER_STYLE_TOPIC]
+www.youtube.com##.ytd-rich-metadata-row-renderer[component-style=RICH_METADATA_RENDERER_STYLE_BOX_ART]
+www.youtube.com###collapsible > .ytd-metadata-row-container-renderer
+www.youtube.com##ytd-video-description-music-section-renderer
+youtube.com##div[slot="extra-content"]:has(button-view-model>a[href="/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"])
+www.youtube.com##ytd-horizontal-card-list-renderer:has(button-view-model>a[href="/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"])
+www.youtube.com##ytd-video-description-course-section-renderer
+www.youtube.com##ytd-metadata-row-container-renderer:has(ytd-rich-metadata-renderer[component-style="RICH_METADATA_RENDERER_STYLE_SQUARE"])
+www.youtube.com##ytd-metadata-row-renderer:has(yt-formatted-string[has-link-only_] > a[href^="/channel/"])
+www.youtube.com##ytd-metadata-row-renderer:has(yt-formatted-string[has-link-only_] > a[href^="/watch"])
+www.youtube.com##ytd-metadata-row-renderer:has(a[href="http://www.youtube.com/t/community_guidelines"])
+www.youtube.com##ytd-horizontal-card-list-renderer:has(ytd-place-data-view-model)
+! www.youtube.com##ytd-horizontal-card-list-renderer:has(#navigation-button)
+www.youtube.com##ytd-video-description-infocards-section-renderer
+www.youtube.com##ytd-video-description-infocards-section-renderer>a#header[href^="/@"]
+www.youtube.com##ytd-video-description-infocards-section-renderer>#action-buttons
+www.youtube.com###expandable-metadata:has(video-summary-content-view-model)
+www.youtube.com###video-summary
+
+! ============================================================
+! VIDEO PAGE — COMMENTS
+! ============================================================
+youtube.com##.translate-button[state="untoggled"]
+youtube.com###paid-comment-chip[role=button]
+www.youtube.com##ytd-comment-view-model>#paid-comment-background
+youtube.com##span#sponsor-comment-badge
+
+! ============================================================
+! VIDEO PAGE — RECOMMENDATIONS SIDEBAR
+! ============================================================
+www.youtube.com##ytd-tvfilm-offer-module-renderer
+www.youtube.com###donation-shelf
+m.youtube.com##ytm-donation-shelf-renderer
+www.youtube.com##ytd-engagement-panel-section-list-renderer[target-id="ytbc-related-shelf"]
+www.youtube.com##ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-ads"]
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
+www.youtube.com##ytd-engagement-panel-section-list-renderer[target-id^="shopping_panel_for_entry_point"]
+www.youtube.com##ytd-channel-renderer.ytd-item-section-renderer
+
+! ============================================================
+! SHORTS PLAYER
+! ============================================================
+youtube.com###share-button.ytd-reel-player-overlay-renderer
+
+! ============================================================
+! CHANNEL PAGE — TABS
+! ============================================================
+youtube.com##tp-yt-paper-tab:has(> .tab-content:has-text(Store))
+youtube.com##yt-tab-shape[tab-title="Store"]
+youtube.com###yt-tab-shape[tab-title="Posts"]
+youtube.com##tp-yt-paper-tab:has(> .tab-content:has-text(Channels))
+youtube.com##yt-tab-shape[tab-title="Channels"]
+
+! ============================================================
+! CHANNEL PAGE — HEADER & SHELVES
+! ============================================================
+www.youtube.com##.banner-visible-area
+www.youtube.com##.page-header-banner
+www.youtube.com###page-header-banner
+m.youtube.com##.c4-tabbed-header-page-header-banner
+www.youtube.com###channel-header > #links-holder
+www.youtube.com###channel-header-links
+m.youtube.com##ytm-channel-header-links-view-model
+youtube.com###meta>p:has(>#channel-handle)
+youtube.com##.meta-item:has(>#channel-handle)
+www.youtube.com##.ytd-recognition-shelf-renderer
+! www.youtube.com##ytd-shelf-renderer:has(.badge-style-type-members-only)
+! m.youtube.com##ytm-shelf-renderer:has(ytm-badge[data-type="BADGE_STYLE_TYPE_MEMBERS_ONLY"])
+! www.youtube.com##ytd-shelf-renderer:has(ytd-channel-renderer):has(.grid-subheader:not(:has(>#title-container[hidden])))
+! m.youtube.com##ytm-shelf-renderer:has(ytm-compact-channel-renderer)
+www.youtube.com##ytd-shelf-renderer:has(ytd-grid-channel-renderer)
+www.youtube.com###links-container.ytd-channel-about-metadata-renderer
+m.youtube.com##.about-channel-section:has(>.about-channel-new-links-container)
+
+! ============================================================
+! LIVE CHAT
+! ============================================================
+www.youtube.com##ytd-live-chat-frame:has(> ytd-message-renderer)
+youtube.com###chat
+youtube.com###ticker
+youtube.com###product-picker
+youtube.com##yt-live-chat-paid-sticker-renderer
+youtube.com##yt-live-chat-author-badge-renderer[type=member]
+youtube.com###author-name.member:style(color: var(--yt-live-chat-secondary-text-color, rgba(255,255,255,0.7)) !important)
+youtube.com##.emoji[data-emoji-id]
+youtube.com##yt-live-chat-text-message-renderer:not(:has(#message:min-text-length(1)))
+youtube.com##yt-live-chat-paid-message-renderer
+youtube.com##yt-live-chat-membership-item-renderer
+
+! ============================================================
+! SEARCH RESULTS
+! ============================================================
+! www.youtube.com##:matches-path(/results) ytd-shelf-renderer
+! www.youtube.com##:matches-path(/results) ytd-horizontal-card-list-renderer
+! www.youtube.com##:matches-path(/results) ytd-universal-watch-card-renderer
+www.youtube.com##ytd-radio-renderer
+www.youtube.com##:matches-path(/results) .ytd-channel-renderer#description
+
+! ============================================================
+! EMBED
+! ============================================================
+youtube.com##.ytp-info-panel-preview
+youtube.com##.ytp-impression-link
