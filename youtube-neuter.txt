@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Neuter
-! Last modified: 2026/02/08
+! Last modified: 2025-09-12
 ! Expires: 1 day
 ! Homepage: https://github.com/mchangrh/yt-neuter
 ! Licence: Unlicense
@@ -12,7 +12,7 @@
 !! shelves
 ! game shelf
 www.youtube.com##ytd-rich-shelf-renderer[has-rounded-box-art-thumbnail-style]
-! playbables shelf
+! playables shelf
 www.youtube.com##ytd-rich-shelf-renderer:has(a[href="/playables"])
 
 !!!! global elements
@@ -77,7 +77,7 @@ www.youtube.com##ytd-popup-container:has(>tp-yt-paper-dialog>ytd-offline-promo-r
 www.youtube.com##ytd-popup-container > tp-yt-paper-dialog:has(upsell-view-model)
 ! become a member of this channel
 www.youtube.com##tp-yt-paper-dialog:has(yt-mealbar-promo-renderer)
-www.youtube.com##yt-bubble-hint-renderer > .yt-bubble-hint-renderer:has(.yt-formatted-string:has-text(Memebership))
+www.youtube.com##yt-bubble-hint-renderer > .yt-bubble-hint-renderer:has(.yt-formatted-string:has-text(Membership))
 
 !!! sidebar navigation
 !! "you" section
@@ -107,8 +107,8 @@ www.youtube.com##ytd-rich-shelf-renderer:has(a[href="/channel/UClgRkhTL3_hImCAmd
 www.youtube.com##ytd-rich-item-renderer:has(.badge-style-type-ypc> span:has-text(Free with Ads))
 
 !! youtube
-# ! mixes (disabled #102)
-# www.youtube.com##ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
+! mixes (disabled #102)
+! www.youtube.com##ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
 ! breaking news shelf
 www.youtube.com##ytd-rich-shelf-renderer:has(#title:has-text(Breaking news))
 m.youtube.com##ytm-rich-section-renderer:has(.rich-shelf-title:has-text(Breaking news))
@@ -308,7 +308,7 @@ www.youtube.com##ytd-metadata-row-renderer:has(yt-formatted-string[has-link-only
 www.youtube.com##ytd-metadata-row-renderer:has(a[href="http://www.youtube.com/t/community_guidelines"])
 ! featured places
 www.youtube.com##ytd-horizontal-card-list-renderer:has(ytd-place-data-view-model)
-# www.youtube.com##ytd-horizontal-card-list-renderer:has(#navigation-button) #108
+! www.youtube.com##ytd-horizontal-card-list-renderer:has(#navigation-button) #108
 ! large channel infocard (#35)
 www.youtube.com##ytd-video-description-infocards-section-renderer
 www.youtube.com##ytd-video-description-infocards-section-renderer>a#header[href^="/@"]
@@ -337,7 +337,7 @@ www.youtube.com##ytd-tvfilm-offer-module-renderer
 www.youtube.com##ytd-feed-nudge-renderer
 !! video-specific sidebar
 ! fundraiser
-www.youtube.com###donation-shelf  
+www.youtube.com###donation-shelf
 m.youtube.com##ytm-donation-shelf-renderer
 ! other sponsored videos (#1)
 www.youtube.com##ytd-engagement-panel-section-list-renderer[target-id="ytbc-related-shelf"]
@@ -381,11 +381,11 @@ youtube.com##.meta-item:has(>#channel-handle)
 ! recognized channel member
 www.youtube.com##.ytd-recognition-shelf-renderer
 ! members only videos - disabled (#85)
-# www.youtube.com##ytd-shelf-renderer:has(.badge-style-type-members-only)
-# m.youtube.com##ytm-shelf-renderer:has(ytm-badge[data-type="BADGE_STYLE_TYPE_MEMBERS_ONLY"])
-# ! featured channels - disabled (#85)
-# www.youtube.com##ytd-shelf-renderer:has(ytd-channel-renderer):has(.grid-subheader:not(:has(>#title-container[hidden])))
-# m.youtube.com##ytm-shelf-renderer:has(ytm-compact-channel-renderer)
+! www.youtube.com##ytd-shelf-renderer:has(.badge-style-type-members-only)
+! m.youtube.com##ytm-shelf-renderer:has(ytm-badge[data-type="BADGE_STYLE_TYPE_MEMBERS_ONLY"])
+! featured channels - disabled (#85)
+! www.youtube.com##ytd-shelf-renderer:has(ytd-channel-renderer):has(.grid-subheader:not(:has(>#title-container[hidden])))
+! m.youtube.com##ytm-shelf-renderer:has(ytm-compact-channel-renderer)
 ! channel scroller
 www.youtube.com##ytd-shelf-renderer:has(ytd-grid-channel-renderer)
 !! about
@@ -425,13 +425,13 @@ youtube.com##yt-live-chat-membership-item-renderer
 
 !!!! /results - search
 !! shelves
-# - disabled (#85)
-# ! people also watched, latest from channel, for you, previously watched, channels new to you
-# www.youtube.com##:matches-path(/results) ytd-shelf-renderer
-# ! People also search for
-# www.youtube.com##:matches-path(/results) ytd-horizontal-card-list-renderer
-# ! Featured channels and TV shows
-# www.youtube.com##:matches-path(/results) ytd-universal-watch-card-renderer
+! - disabled (#85)
+! ! people also watched, latest from channel, for you, previously watched, channels new to you
+! www.youtube.com##:matches-path(/results) ytd-shelf-renderer
+! ! People also search for
+! www.youtube.com##:matches-path(/results) ytd-horizontal-card-list-renderer
+! ! Featured channels and TV shows
+! www.youtube.com##:matches-path(/results) ytd-universal-watch-card-renderer
 
 ! channel mix
 www.youtube.com##ytd-radio-renderer
