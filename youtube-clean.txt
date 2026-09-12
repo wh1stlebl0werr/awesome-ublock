@@ -2,14 +2,44 @@
 ! Description: Removes Shorts, recommendations, member-only videos, sidebar clutter, and UI bloat from YouTube
 ! Homepage: https://github.com/wh1stlebl0werr/ublock-filters-collection
 ! License: Public Domain
-! Version: 1.1.0
-! Last modified: 2025-09-12
+! Version: 1.2.0
+! Last modified: 2026-09-12
 ! Expires: 7 days
+
+! ============================================================
+! SHORTS — NETWORK BLOCK
+! ============================================================
+||youtube.com/shorts$document,xmlhttprequest,important
+||youtube.com/shorts/*$document,xmlhttprequest,important
+
+! ============================================================
+! SHORTS — COSMETIC
+! ============================================================
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-reel-video-renderer
+youtube.com##ytd-shorts-lockup-view-model
+youtube.com##yt-shorts-player-view-model
+youtube.com##ytd-shorts
+youtube.com##ytd-watch-flexy[is-shorts-mode]
+youtube.com##[overlay-style="SHORTS"]
+youtube.com##ytd-rich-section-renderer:has(ytd-reel-shelf-renderer)
+youtube.com##ytd-rich-section-renderer:has([is-shorts])
+youtube.com##ytd-rich-item-renderer:has(a[href^="/shorts/"])
+youtube.com##ytd-grid-video-renderer:has(a[href^="/shorts/"])
+! youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+youtube.com##ytd-compact-video-renderer:has(a[href^="/shorts/"])
+youtube.com##ytd-shelf-renderer:has(a[href^="/shorts/"])
+youtube.com##yt-chip-cloud-chip-renderer:has-text(/Shorts/i)
+youtube.com##tp-yt-paper-tab:has(yt-tab-shape:has-text(/Shorts/i))
+youtube.com##ytd-guide-entry-renderer:has(#endpoint[title="Shorts"])
+youtube.com##ytd-mini-guide-entry-renderer:has(#endpoint[title="Shorts"])
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! ============================================================
 ! SEARCH PAGE CLUTTER
 ! ============================================================
-www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 youtube.com##ytd-shelf-renderer:has(span:has-text(/Related to your search/i))
 youtube.com##ytd-shelf-renderer:has-text(/People also watched/)
 youtube.com###contents > ytd-shelf-renderer:has-text(/For you/)
@@ -44,11 +74,6 @@ www.youtube.com##ytd-mini-guide-entry-renderer:has(#endpoint[href="/feed/explore
 www.youtube.com##ytd-guide-entry-renderer:has(#endpoint[href="/feed/guide_builder"])
 www.youtube.com##ytd-guide-section-renderer:has(#guide-section-title:has-text(More from YouTube))
 www.youtube.com##ytd-guide-renderer #footer
-
-! ============================================================
-! SHORTS IN SEARCH
-! ============================================================
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 
 ! ============================================================
 ! AD DETECTION BYPASS
