@@ -4,7 +4,6 @@
 ! License: Public Domain
 ! Version: 1.0.1
 ! Last modified: 2025-09-12
-! Expires: 7 days
 
 ! ===== SEARCH PAGE CLUTTER =====
 www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
