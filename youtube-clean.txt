@@ -1,0 +1,37 @@
+! Title: YouTube Clean
+! Description: Removes Shorts, recommendations, member-only videos, and sidebar clutter from YouTube
+! Homepage: https://github.com
+! License: Public Domain
+! Version: 1.0.0
+! Last modified: 2025-09-12
+! Expires: 7 days
+
+!#if env_chromium
+! ===== SEARCH PAGE CLUTTER =====
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related to your search/i))
+youtube.com##ytd-shelf-renderer:has-text(/People also watched/)
+youtube.com###contents > ytd-shelf-renderer:has-text(/For you/)
+youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Watch again/i))
+youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Searches related to/i))
+youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Learn while you're at home/i))
+youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope
+youtube.com###secondary > .ytd-two-column-search-results-renderer
+youtube.com###contents > .ytd-secondary-search-container-renderer.style-scope
+youtube.com##ytd-shelf-renderer:has-text(/Previously watched/)
+youtube.com##ytd-shelf-renderer:has-text(/Channels new to you/)
+youtube.com##ytd-shelf-renderer:has-text(/From related searches/)
+
+! ===== MEMBER-ONLY VIDEOS =====
+www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer.style-scope:has(div.ytd-badge-supported-renderer.style-scope.badge-style-type-members-only)
+
+! ===== SIDEBAR =====
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Shorts"]
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Home"]
+www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Accueil"]
+
+! ===== SHORTS IN SEARCH =====
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+! WARNING: line below may break video playback - use with caution
+! www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+!#endif
