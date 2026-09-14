@@ -3,16 +3,11 @@ My ad-blocking solution that I use on a daily basis.
 - On Supermium M144.0.7559.256 (Due to RAM limitations).
 
 Plans to execute on this repository:
-- Extending filter coverage to X, Reddit, Facebook & cookie consent banners.
-- Documenting each filter file (functionality, why it's there & known site breakage).
-- Maintaining a proper changelog so filter lists are known to be tested & up to date.
-- Adding better ad-blocking filter lists that truly work & has no BS needed to deal with afterwards.
-- Adding DNS servers that are good for reliability, latency & privacy (NSFW filtering as a bonus perhaps?).
-- Configuring a one-stop preset that gets people good browsing performance without forcing them to face ads on every page.
-- Benchmarking & comparing DNS resolvers (Quad9, Mullvad, ControlD & others) across latency, logging policy & DNSSEC support.
-- Building tiered presets (minimal, balanced, aggressive) as single importable filter lists. (Inspiration taken from hagezi/dns-blocklists!)
+- Expanding filter coverage to more platforms & cookie consent banners, combining 3rd-party lists that work without conflict.
+- Building tiered presets as importable filter lists + a 1-stop preset for users who want clean browsing out of the box.
+- Adding DNS resolver recommendations with benchmarks covering latency, logging policy & DNSSEC support + bonus NSFW filtering?
+- Documenting each filter with its purpose, reasoning & known breakage, with a changelog to track tested updates.
 
-I'm doing this as a hobby, therefore I won't spend much time implementing my ideas- however, efforts will be present.
-I also might include other filter lists/presets if they suit my criteria- Credits will be given. 
-Any tip or query can be slid into my email, vxrnzr@gmail.com.
-Help is always appreciated!
+This is nothing more than a hobby, so I won't spend much time here - efforts will be present.
+Whoever's content I add/use here, they shall get their proper credits. 
+Any tip or query can be slid into my email. -> {{ vxrnzr@gmail.com }} Help is always appreciated!
