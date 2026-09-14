@@ -8,6 +8,7 @@ Plans to execute on this repository:
 - Adding DNS resolver recommendations with benchmarks covering latency, logging policy & DNSSEC support + bonus NSFW filtering?
 - Documenting each filter with its purpose, reasoning & known breakage, with a changelog to track tested updates.
 
-This is nothing more than a hobby, so I won't spend much time here - efforts will be present.
+This is nothing more than a hobby, so I won't spend much time here - but efforts will be present.
 Whoever's content I add/use here, they shall get their proper credits. 
-Any tip or query can be slid into my email. -> {{ vxrnzr@gmail.com }} Help is always appreciated!
+Any tip or query can be slid into my email -> *vxrnzr@gmail.com*.
+Help is always appreciated!
