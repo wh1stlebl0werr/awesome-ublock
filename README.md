@@ -13,4 +13,6 @@ Plans to execute on this repository:
 - Building tiered presets (minimal, balanced, aggressive) as single importable filter lists. (Inspiration taken from hagezi/dns-blocklists!)
 
 I'm doing this as a hobby, therefore I won't spend much time implementing my ideas- however, efforts will be present.
-Any tip or assistance can be slid into my email, vxrnzr@gmail.com.
+I also might include other filter lists/presets if they suit my criteria- Credits will be given. 
+Any tip or query can be slid into my email, vxrnzr@gmail.com.
+Help is always appreciated!
