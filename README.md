@@ -4,7 +4,7 @@ Documentation of the current filter lists:
 
 Add the filter lists to your ad-blocker!
 - [Subscribe to youtube-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/youtube-clean.txt&title=YouTube%20Clean) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/youtube-clean.txt)
-- [Subscribe to instagram-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/instagram-reels-hardened.txt&title=Instagram%20Reels%20Hardened) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/instagram-reels-hardened.txt)
+- [Subscribe to instagram-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/instagram-clean.txt&title=Instagram%20Clean) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/instagram-clean.txt)
 
 My ad-blocking solution that I use on a daily basis.
 - Currently using uBlock Origin (Manifest V2, Sideloaded).
