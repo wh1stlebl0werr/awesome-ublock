@@ -1,4 +1,4 @@
-! Title: Instagram Reels Hardened
+! Title: Instagram Clean
 ! Description: Blocks Instagram Reels across all surfaces at network and cosmetic level
 ! Homepage: https://github.com/wh1stlebl0werr/awesome-ublock
 ! License: CC0 1.0 Universal
