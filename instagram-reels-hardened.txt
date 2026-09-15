@@ -1,13 +1,15 @@
 ! Title: Instagram Reels Hardened
 ! Description: Blocks Instagram Reels across all surfaces at network and cosmetic level
-! Last revised: 2026-09-12
-! Tested: uBlock Origin 1.57+, AdGuard 4.x
+! Homepage: https://github.com/wh1stlebl0werr/awesome-ublock
+! License: CC0 1.0 Universal
+! Version: 1.2.0
+! Last modified: 2026-09-15
 ! Notes:
 !   - No class selectors (Meta redeploys CSS every 48-72hrs)
 !   - All text matching uses /i flag for locale tolerance
 !   - $xhr rules intercept the API calls that SPA feeds use
 
-! ---- Network-level block ----
+! ---- Network level block ----
 ||instagram.com/reels/*$document,xmlhttprequest,important
 ||instagram.com/reel/*$document,xmlhttprequest,important
 ||instagram.com/api/v1/clips/*$xmlhttprequest,important
@@ -18,9 +20,6 @@ www.instagram.com##a[href$="/reels/"]
 
 ! ---- Cosmetic: nav bar Reels button ----
 www.instagram.com##a[href="/reels/"]
-
-! ---- Cosmetic: sponsored feed posts only ----
-www.instagram.com##article:has(svg[aria-label="Sponsored"])
 
 ! ---- Cosmetic: Reels tray / horizontal shelf in feed ----
 www.instagram.com##div[role="list"]:has(a[href*="/reel/"])
