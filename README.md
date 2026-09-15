@@ -3,8 +3,8 @@ Documentation of the current filter lists:
 - youtube-clean is a decluttering filter that removes shorts, algorithmic shelves, homepage clutter, sidebar bloat, and channel page noise. Strips distractions in video page, including merch, surveys, popups, membership nags, & paid comments. Bypasses YouTube's adblock detection and blocks select JS files for lighter page loads.
 
 Add the filter lists to your ad-blocker!
-- [Subscribe to youtube-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/youtube-clean.txt&title=YouTube%20Clean) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/youtube-clean.txt)
-- [Subscribe to instagram-clean](https://subscribe.adblockplus.org/?location=[https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/instagram-clean.txt&title=Instagram%20Clean](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/instagram-clean.txt)) • [Raw]([https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/instagram-clean.txt])
+- [Subscribe to youtube-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/youtube-clean.txt&title=YouTube%20Clean) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/youtube-clean.txt)
+- [Subscribe to instagram-clean](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/instagram-clean.txt&title=Instagram%20Clean) • [Raw](https://raw.githubusercontent.com/wh1stlebl0werr/awesome-ublock/main/filters/instagram-clean.txt)
 
 My ad-blocking solution that I use on a daily basis.
 - Currently using uBlock Origin (Manifest V2, Sideloaded).
