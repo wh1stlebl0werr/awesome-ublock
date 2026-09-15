@@ -1,5 +1,5 @@
 Documentation of the current filter lists:
-- instagram-clean intercepts the API calls that load reels content & removes them all. Instagram posts are slightly broken due to there being changes in the interactive meta. Also hides sponsored posts. No class selectors used since Meta redeploys CSS every 48-72hrs, all rules use stable attributes like href and aria-label.
+- instagram-clean intercepts the API calls that load reels content & removes them all. Instagram posts are slightly broken due to there being changes in the interactive meta. No class selectors used since Meta redeploys CSS every 48-72hrs, all rules use stable attributes like href and aria-label.
 - youtube-clean is a decluttering filter that removes shorts, algorithmic shelves, homepage clutter, sidebar bloat, and channel page noise. Strips distractions in video page, including merch, surveys, popups, membership nags, & paid comments. Bypasses YouTube's adblock detection and blocks select JS files for lighter page loads.
 
 Add the filter lists to your ad-blocker!
