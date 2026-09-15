@@ -2,7 +2,7 @@
 ! Description: Blocks Instagram Reels across all surfaces at network and cosmetic level
 ! Homepage: https://github.com/wh1stlebl0werr/awesome-ublock
 ! License: CC0 1.0 Universal
-! Version: 1.2.0
+! Version: 1.0.0
 ! Last modified: 2026-09-15
 ! Expires: 7 days
 ! Notes:
