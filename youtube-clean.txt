@@ -1,19 +1,19 @@
 ! Title: YouTube Clean
 ! Description: Removes Shorts, recommendations, member-only videos, sidebar clutter, and UI bloat from YouTube
-! Homepage: https://github.com/wh1stlebl0werr/ublock-filters-collection
-! License: Public Domain
+! Homepage: https://github.com/wh1stlebl0werr/awesome-ublock
+! License: CC0 1.0 Universal
 ! Version: 1.2.0
-! Last modified: 2026-09-12
+! Last modified: 2026-09-15
 ! Expires: 7 days
 
 ! ============================================================
-! SHORTS — NETWORK BLOCK
+! SHORTS NETWORK BLOCK
 ! ============================================================
 ||youtube.com/shorts$document,xmlhttprequest,important
 ||youtube.com/shorts/*$document,xmlhttprequest,important
 
 ! ============================================================
-! SHORTS — COSMETIC
+! SHORTS COSMETIC
 ! ============================================================
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
@@ -28,7 +28,6 @@ youtube.com##ytd-rich-section-renderer:has(ytd-reel-shelf-renderer)
 youtube.com##ytd-rich-section-renderer:has([is-shorts])
 youtube.com##ytd-rich-item-renderer:has(a[href^="/shorts/"])
 youtube.com##ytd-grid-video-renderer:has(a[href^="/shorts/"])
-! youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 youtube.com##ytd-compact-video-renderer:has(a[href^="/shorts/"])
 youtube.com##ytd-shelf-renderer:has(a[href^="/shorts/"])
 youtube.com##yt-chip-cloud-chip-renderer:has-text(/Shorts/i)
@@ -54,13 +53,13 @@ youtube.com##ytd-shelf-renderer:has-text(/Channels new to you/)
 youtube.com##ytd-shelf-renderer:has-text(/From related searches/)
 
 ! ============================================================
-! MEMBER-ONLY VIDEOS
+! MEMBER ONLY VIDEOS
 ! ============================================================
 www.youtube.com##ytd-rich-item-renderer:has(div.badge-style-type-members-only)
 www.youtube.com##ytd-rich-item-renderer:has(.yt-badge-shape--membership)
 
 ! ============================================================
-! SIDEBAR NAVIGATION
+! SIDEBAR NAVS
 ! ============================================================
 www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Shorts"]
 www.youtube.com##a#endpoint.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Home"]
@@ -76,7 +75,7 @@ www.youtube.com##ytd-guide-section-renderer:has(#guide-section-title:has-text(Mo
 www.youtube.com##ytd-guide-renderer #footer
 
 ! ============================================================
-! AD DETECTION BYPASS
+! AD-DETECTION BYPASS
 ! ============================================================
 youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
 youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
@@ -84,7 +83,7 @@ youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
 youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
 
 ! ============================================================
-! FOOTER / GUIDE LINKS
+! FOOTER/GUIDE LINKS
 ! ============================================================
 www.youtube.com###copyright
 www.youtube.com###guide-links-primary
@@ -108,7 +107,7 @@ www.youtube.com##ytd-topbar-menu-button-renderer:has(button[aria-label=Create])
 www.youtube.com##ytd-button-renderer:has(button[aria-label=Create])
 
 ! ============================================================
-! POPUPS & SURVEYS
+! POPUPS/SURVEYS
 ! ============================================================
 youtube.com###survey
 www.youtube.com##ytd-inline-survey-renderer
@@ -133,7 +132,7 @@ www.youtube.com##.ytp-promotooltip-wrapper
 www.youtube.com##tp-yt-iron-overlay-backdrop.opened
 
 ! ============================================================
-! PAYMENT & MEMBERSHIP NAGS
+! PAYMENT/MEMBERSHIP NAGS
 ! ============================================================
 www.youtube.com##ytd-popup-container:has(>tp-yt-paper-dialog>ytd-offline-promo-renderer)
 www.youtube.com##ytd-popup-container > tp-yt-paper-dialog:has(upsell-view-model)
@@ -145,7 +144,6 @@ www.youtube.com##yt-bubble-hint-renderer > .yt-bubble-hint-renderer:has(.yt-form
 ! ============================================================
 www.youtube.com##ytd-rich-shelf-renderer:has(a[href="/channel/UClgRkhTL3_hImCAmdLfDE4g"])
 www.youtube.com##ytd-rich-item-renderer:has(.badge-style-type-ypc> span:has-text(Free with Ads))
-! www.youtube.com##ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
 www.youtube.com##ytd-rich-shelf-renderer:has(#title:has-text(Breaking news))
 m.youtube.com##ytm-rich-section-renderer:has(.rich-shelf-title:has-text(Breaking news))
 www.youtube.com##ytd-rich-shelf-renderer:has(ytd-badge-supported-renderer#featured-badge)
@@ -181,14 +179,14 @@ www.youtube.com##ytd-menu-service-item-download-renderer
 www.youtube.com##ytd-menu-service-item-renderer:has(>tp-yt-paper-item:has(>yt-formatted-string:has-text(Share)))
 
 ! ============================================================
-! VIDEO PAGE — PERFORMANCE
+! VIDEO PAGE PERFORMANCE
 ! ============================================================
 ||www.youtube.com/s/desktop/*/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js$script,domain=youtube.com
 ||www.youtube.com/s/desktop/*/jsbin/scheduler.vflset/scheduler.js$script,domain=youtube.com
 ||www.youtube.com/youtubei/v1/updated_metadata$domain=youtube.com
 
 ! ============================================================
-! VIDEO PAGE — PLAYER
+! VIDEO PAGE PLAYER
 ! ============================================================
 www.youtube.com###player>#cinematics.ytd-watch-flexy
 www.youtube.com###player>#cinematics-container
@@ -208,7 +206,7 @@ youtube.com##button.ytp-button[data-tooltip-target-id=ytp-autonav-toggle-button]
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
 
 ! ============================================================
-! VIDEO PAGE — UNDER PLAYER
+! VIDEO PAGE UNDER PLAYER
 ! ============================================================
 www.youtube.com##ytd-badge-supported-renderer:has(.badge-style-type-ypc):remove()
 youtube.com##.ytp-suggested-action-badge
@@ -225,7 +223,7 @@ www.youtube.com##ytd-channel-name>.ytd-channel-name>tp-yt-paper-tooltip.ytd-chan
 m.youtube.com##.ytm-infocards-creator-custom-url-buttons
 
 ! ============================================================
-! VIDEO PAGE — ACTION ROW
+! VIDEO PAGE ACTION ROW
 ! ============================================================
 www.youtube.com##ytd-download-button-renderer
 ||www.youtube.com/s/player/*/player_ias.vflset/*/offline.js$script
@@ -248,7 +246,7 @@ m.youtube.com##button-view-model:has(button[aria-label="Save to playlist"])
 www.youtube.com##ytd-button-renderer:has(>yt-button-shape:has(>button.yt-spec-button-shape-next--disabled)):not(.ytd-commentbox)
 
 ! ============================================================
-! VIDEO PAGE — DESCRIPTION BOX
+! VIDEO PAGE DESCRIPTION BOX
 ! ============================================================
 www.youtube.com##+js(aeld, yt-text-inline-expander-collapse-clicked)
 youtube.com###info-container #info>a.yt-simple-endpoint[href^="/hashtag/"]
@@ -275,7 +273,7 @@ www.youtube.com###expandable-metadata:has(video-summary-content-view-model)
 www.youtube.com###video-summary
 
 ! ============================================================
-! VIDEO PAGE — COMMENTS
+! VIDEO PAGE COMMENTS
 ! ============================================================
 youtube.com##.translate-button[state="untoggled"]
 youtube.com###paid-comment-chip[role=button]
@@ -283,7 +281,7 @@ www.youtube.com##ytd-comment-view-model>#paid-comment-background
 youtube.com##span#sponsor-comment-badge
 
 ! ============================================================
-! VIDEO PAGE — RECOMMENDATIONS SIDEBAR
+! VIDEO PAGE RECOMMENDATIONS SIDEBAR
 ! ============================================================
 www.youtube.com##ytd-tvfilm-offer-module-renderer
 www.youtube.com###donation-shelf
@@ -300,7 +298,7 @@ www.youtube.com##ytd-channel-renderer.ytd-item-section-renderer
 youtube.com###share-button.ytd-reel-player-overlay-renderer
 
 ! ============================================================
-! CHANNEL PAGE — TABS
+! CHANNEL PAGE TABS
 ! ============================================================
 youtube.com##tp-yt-paper-tab:has(> .tab-content:has-text(Store))
 youtube.com##yt-tab-shape[tab-title="Store"]
@@ -309,7 +307,7 @@ youtube.com##tp-yt-paper-tab:has(> .tab-content:has-text(Channels))
 youtube.com##yt-tab-shape[tab-title="Channels"]
 
 ! ============================================================
-! CHANNEL PAGE — HEADER & SHELVES
+! CHANNEL PAGE HEADER & SHELVES
 ! ============================================================
 www.youtube.com##.banner-visible-area
 www.youtube.com##.page-header-banner
@@ -321,10 +319,6 @@ m.youtube.com##ytm-channel-header-links-view-model
 youtube.com###meta>p:has(>#channel-handle)
 youtube.com##.meta-item:has(>#channel-handle)
 www.youtube.com##.ytd-recognition-shelf-renderer
-! www.youtube.com##ytd-shelf-renderer:has(.badge-style-type-members-only)
-! m.youtube.com##ytm-shelf-renderer:has(ytm-badge[data-type="BADGE_STYLE_TYPE_MEMBERS_ONLY"])
-! www.youtube.com##ytd-shelf-renderer:has(ytd-channel-renderer):has(.grid-subheader:not(:has(>#title-container[hidden])))
-! m.youtube.com##ytm-shelf-renderer:has(ytm-compact-channel-renderer)
 www.youtube.com##ytd-shelf-renderer:has(ytd-grid-channel-renderer)
 www.youtube.com###links-container.ytd-channel-about-metadata-renderer
 m.youtube.com##.about-channel-section:has(>.about-channel-new-links-container)
@@ -347,9 +341,6 @@ youtube.com##yt-live-chat-membership-item-renderer
 ! ============================================================
 ! SEARCH RESULTS
 ! ============================================================
-! www.youtube.com##:matches-path(/results) ytd-shelf-renderer
-! www.youtube.com##:matches-path(/results) ytd-horizontal-card-list-renderer
-! www.youtube.com##:matches-path(/results) ytd-universal-watch-card-renderer
 www.youtube.com##ytd-radio-renderer
 www.youtube.com##:matches-path(/results) .ytd-channel-renderer#description
 
